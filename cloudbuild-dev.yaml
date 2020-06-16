@@ -13,13 +13,5 @@ steps:
   args:
   - '-c'
   - |
-    echo '{' > ./app/services/default/version.txt
-    echo '  "REPO_NAME": "'${REPO_NAME}'",' >> ./app/services/default/version.txt
-    echo '  "BRANCH_NAME": "'${BRANCH_NAME}'",' >> ./app/services/default/version.txt
-    echo '  "TAG_NAME": "'${TAG_NAME}'",' >> ./app/services/default/version.txt
-    echo '  "REVISION_ID": "'${REVISION_ID}'",' >> ./app/services/default/version.txt
-    echo '  "COMMIT_SHA": "'${COMMIT_SHA}'",' >> ./app/services/default/version.txt
-    echo '  "SHORT_SHA": "'${SHORT_SHA}'"' >> ./app/services/default/version.txt
-    echo '}' >> ./app/services/default/version.txt
-    cat ./app/services/default/version.txt
+   echo 'HELLO WORLD'
   waitFor: ['-']
