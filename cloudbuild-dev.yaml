@@ -15,3 +15,16 @@ steps:
   - |
    echo 'HELLO WORLD'
   waitFor: ['-']
+
+# Copy secrets yaml
+- name: 'gcr.io/cloud-builders/gsutil'
+  # Copy secrets yaml
+  id: copy-secrets
+  entrypoint: /bin/bash
+  args: [
+    'gsutil',
+    'cp',
+    'gs://acuit-secrets-${_ENV_LOWER}/${PROJECT_ID}.secrets.yaml.encrypted',
+    '.'
+  ]
+  waitFor: ['-']
